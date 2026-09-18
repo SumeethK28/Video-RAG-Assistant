@@ -1,0 +1,56 @@
+# Environment variables / API keys
+.env
+.env.*
+!.env.example
+
+# Python virtual environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# ChromaDB local vector database
+chroma_db/
+chroma/
+*.sqlite3
+
+# Downloaded / uploaded media
+downloads/
+uploads/
+*.wav
+*.mp3
+*.mp4
+*.m4a
+*.webm
+
+# Generated transcripts / outputs
+outputs/
+transcripts/
+
+# Model / cache files
+.cache/
+*.pt
+*.pth
+*.ckpt
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
