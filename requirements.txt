@@ -1,43 +1,72 @@
+# ==========================================
 # Environment
+# ==========================================
 python-dotenv
 
+
+# ==========================================
 # LangChain / LLM
+# ==========================================
 langchain==1.4.1
+langchain-core
 langchain-text-splitters==1.1.2
 langchain-google-genai==4.4.0
 langchain-chroma==1.1.0
 langchain-huggingface==1.2.2
 
+
+# ==========================================
 # Vector Database & Embeddings
+# ==========================================
 chromadb==1.5.9
 huggingface-hub
 sentence-transformers==6.0.1
 
+
+# ==========================================
 # Audio / Video Processing
+# ==========================================
 yt-dlp
-pydub
 ffmpeg-python
 
+
+# ==========================================
 # Speech Recognition
+# ==========================================
 openai-whisper
 torch
 torchaudio
+torchvision
 
-# Translation
-deep-translator
 
+# ==========================================
+# API / HTTP Requests
+# ==========================================
+requests
+
+
+# ==========================================
 # Tokenization
+# ==========================================
 tiktoken
 
+
+# ==========================================
 # User Interface
+# ==========================================
 streamlit
 watchdog
 
-# Export
+
+# ==========================================
+# Export / Reports
+# ==========================================
 reportlab
 fpdf2
 
+
+# ==========================================
 # Utilities
+# ==========================================
 numpy
 tqdm
-requests
