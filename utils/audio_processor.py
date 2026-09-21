@@ -19,6 +19,9 @@ def download_youtube_audio(url: str) -> str:
                 "preferredquality": "192"
             }
         ],
+        "js_runtimes": {
+            "node": {}
+        },
         "quiet": True
     }
 
@@ -35,6 +38,7 @@ def convert_to_wav(input_path: str) -> str:
 
     subprocess.run([
         "ffmpeg",
+        "-loglevel", "error",
         "-i", input_path,
         "-ac", "1",
         "-ar", "16000",
@@ -53,10 +57,14 @@ def chunk_audio(wav_path: str, chunk_minutes: int = 10) -> list:
     subprocess.run(
         [
             "ffmpeg",
+            "-loglevel", "error",
             "-i", wav_path,
             "-f", "segment",
             "-segment_time", str(chunk_seconds),
-            "-c", "copy",
+            "-ac", "1",
+            "-ar", "16000",
+            "-c:a", "pcm_s16le",
+            "-y",
             output_pattern
         ],
         check=True
@@ -70,6 +78,7 @@ def chunk_audio(wav_path: str, chunk_minutes: int = 10) -> list:
         for file in sorted(os.listdir(directory))
         if file.startswith(filename + "_chunk_")
         and file.endswith(".wav")
+        and "_sv_" not in file
     ]
 
     return chunks

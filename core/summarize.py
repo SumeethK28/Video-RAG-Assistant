@@ -4,10 +4,9 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_core.runnables import RunnablePassthrough, RunnableLambda
 import os
-import pydantic
 
 def get_llm():
-    return ChatPromptTemplate(model = "gemini-3.1-flash-lite", google_api_key = os.getenv("GOOGLE_API_KEY"), temperature = 0.3)
+    return ChatGoogleGenerativeAI(model = "gemini-3.1-flash-lite", google_api_key = os.getenv("GOOGLE_API_KEY"), temperature = 0.3)
 
 def split_transcript(transcript: str) -> list:
     splitter = RecursiveCharacterTextSplitter(
@@ -53,5 +52,8 @@ def generate_title(transcript: str) -> str:
             ("human", "{text}")
         ]) | llm | StrOutputParser()
     )
+
+    if not transcript or not transcript.strip():
+        raise ValueError("Cannot generate a title from an empty transcript.")
 
     return title_chain.invoke(transcript[:2000])
