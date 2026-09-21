@@ -11,7 +11,7 @@ EMBEDDING_MODEL = "all-MiniLM-L6-v2"
 def get_embeddings():
     return HuggingFaceEmbeddings(
         model_name = EMBEDDING_MODEL,
-        model_kwargs = {"device" : 'gpu'}
+        model_kwargs = {"device" : 'cpu'}
     )
 
 def build_vector_store(transcript: str) -> Chroma:

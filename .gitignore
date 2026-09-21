@@ -1,56 +1,120 @@
+# ==========================================
 # Environment variables / API keys
+# ==========================================
 .env
 .env.*
 !.env.example
 
-# Python virtual environment
+
+# ==========================================
+# Python virtual environments
+# ==========================================
 .venv/
 venv/
 env/
 
+
+# ==========================================
 # Python cache
+# ==========================================
 __pycache__/
 *.py[cod]
 *$py.class
 
-# ChromaDB local vector database
+
+# ==========================================
+# Vector databases / ChromaDB
+# ==========================================
+vector_db/
 chroma_db/
 chroma/
 *.sqlite3
 
+
+# ==========================================
 # Downloaded / uploaded media
+# ==========================================
 downloads/
 uploads/
+
 *.wav
 *.mp3
 *.mp4
 *.m4a
 *.webm
+*.mov
+*.aac
+*.flac
 
-# Generated transcripts / outputs
+
+# ==========================================
+# Generated outputs
+# ==========================================
 outputs/
 transcripts/
+exports/
 
-# Model / cache files
+
+# ==========================================
+# AI / ML model files
+# ==========================================
 .cache/
 *.pt
 *.pth
 *.ckpt
+*.bin
+*.safetensors
 
+
+# ==========================================
+# Python build / package files
+# ==========================================
+build/
+dist/
+*.egg-info/
+.eggs/
+
+
+# ==========================================
+# Testing / coverage
+# ==========================================
+.pytest_cache/
+.coverage
+htmlcov/
+
+
+# ==========================================
 # Jupyter
+# ==========================================
 .ipynb_checkpoints/
 
-# VS Code
-.vscode/
 
-# OS files
+# ==========================================
+# IDE
+# ==========================================
+.vscode/
+.idea/
+
+
+# ==========================================
+# OS generated files
+# ==========================================
 .DS_Store
 Thumbs.db
+desktop.ini
 
+
+# ==========================================
 # Logs
+# ==========================================
 *.log
 logs/
 
+
+# ==========================================
 # Temporary files
+# ==========================================
 *.tmp
 *.temp
+*.bak
+~*
